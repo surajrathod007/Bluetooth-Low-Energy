@@ -15,6 +15,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.app.ActivityCompat
 import com.surajrathod.bluetoothlowenergy.databinding.ActivityScanBinding
 
@@ -42,6 +43,7 @@ class ScanActivity : AppCompatActivity() {
         set(value) {
             field = value
             binding.btnScanBLE.text = if (value) "Stop Scan" else "Start Scan"
+            binding.progressScanning.visibility = if(value) View.VISIBLE else View.GONE
         }
 
 
